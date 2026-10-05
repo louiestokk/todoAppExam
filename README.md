@@ -1,16 +1,14 @@
-# React + Vite
+# Project Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Librarier / Packages
+1. Redux/Redux Toolkit for global state management
+2. MUI icons & components for UI
+3. react-router-dom for routing 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+push i redux toolkit istället för spread?
 
-## React Compiler
+I Redux Toolkits createSlice är push helt okej, och det är det som rekommenderas där. Det beror på att RTK använder Immer under huven. Du "muterar" bara en draft-kopia, och Immer skapar sedan ett nytt immutable state åt dig.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Inne i createSlice-reducers: state.todos.push(action.payload) fungerar bra. Spread (state.todos = [...state.todos, action.payload]) fungerar också, men det behövs inte.
+I vanlig React-state (useState) eller i en handskriven Redux-reducer utan Immer: använd spread, eftersom där får du inte mutera direkt.
