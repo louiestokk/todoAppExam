@@ -1,9 +1,10 @@
 import React from 'react'
+import heroImg from '../assets/hero.png'
 
 const HeaderComp = () => {
   return (
     <header>      
-      <img src="../assets/hero.png" alt="Hero" />
+      <img src={heroImg} alt="Hero" />
       <nav>
         <ul className="nav-list">
           <li><a href="#center">Home</a></li>

@@ -1,6 +1,6 @@
 # Project Todo App
 
-# Librarier / Packages
+# Libraries / Packages
 1. Redux/Redux Toolkit for global state management
 2. MUI icons & components for UI
 3. react-router-dom for routing 
