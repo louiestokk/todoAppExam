@@ -26,9 +26,17 @@ function App() {
     setTodos([...todos, {id: Date.now(), task:text, done:false}])
     setDraft("")
   }
-
+  // ES6 syntax arrow function
   const handleDone = (id) => {
     setTodos(todos.map((todo) => todo.id === id ? {...todo, done:!todo.done}: todo))
+  }
+
+  const handleRemove = (id) => {
+    setTodos(todos?.filter((todo)=> todo.id !== id))
+    // todos?.filter anvands for att inte fa errors om vi inte far todos arrayn
+    // vad den gor ar att vi sager om vi har todos da kan vi filtrera
+    // men i detta projet har vi definerat todos sa igentligen behovs det inte
+    // vill bara visa kunskap 
   }
 
   return (
@@ -50,10 +58,11 @@ function App() {
           <Button type="button" styles="add-btn" handleClick={handleAdd} text="Add todo"/>
         </div>
       </section>
+      {/*  conditional rendering med villkor att längden på todos arrayn är längre/större än 0 och uppfylls villkoret renderar vi section med grid container. I grid containern mapar vi över todos arrayn och retunerar en component Todo med props och i Todo componenten retunerar vi en grid item. */}
       {todos.length>0 && <section className="todo-section">
         <Grid container spacing={2}>
           {todos.map((todo)=> (
-            <Todo key={todo.id} todo={todo} onToggleDone={handleDone}/>
+            <Todo key={todo.id} todo={todo} onToggleDone={handleDone} removeDone={handleRemove}/>
           ))}
         </Grid>
       </section>}
