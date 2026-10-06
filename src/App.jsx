@@ -23,8 +23,12 @@ function App() {
   const handleAdd = () => {
     const text = draft.trim()
     if(text === "") return
-    setTodos([...todos, {id: Date.now(), task:text}])
+    setTodos([...todos, {id: Date.now(), task:text, done:false}])
     setDraft("")
+  }
+
+  const handleDone = (id) => {
+    setTodos(todos.map((todo) => todo.id === id ? {...todo, done:!todo.done}: todo))
   }
 
   return (
@@ -49,7 +53,7 @@ function App() {
       {todos.length>0 && <section className="todo-section">
         <Grid container spacing={2}>
           {todos.map((todo)=> (
-            <Todo key={todo.id} todo={todo}/>
+            <Todo key={todo.id} todo={todo} onToggleDone={handleDone}/>
           ))}
         </Grid>
       </section>}

@@ -169,6 +169,11 @@ header img {
   text-align: left;
 }
 
+.todo-done {
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
 
 footer {
   padding: 20px 32px;
