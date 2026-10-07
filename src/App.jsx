@@ -39,6 +39,14 @@ function App() {
     // vill bara visa kunskap 
   }
 
+  const updateTodo = (id,newTodo) => {
+    const current = todos.find((todo) => todo.id === id)
+    if(!current) return
+    const text = newTodo.trim()
+    if(text === "") return
+    setTodos(todos.map((todo) => todo.id === id ? {...todo, task:text} : todo))
+  }
+
   return (
     <>    
     <HeaderComp />
@@ -62,7 +70,7 @@ function App() {
       {todos.length>0 && <section className="todo-section">
         <Grid container spacing={2}>
           {todos.map((todo)=> (
-            <Todo key={todo.id} todo={todo} onToggleDone={handleDone} removeDone={handleRemove}/>
+            <Todo key={todo.id} todo={todo} onToggleDone={handleDone} removeDone={handleRemove} handleUpdate={updateTodo}/>
           ))}
         </Grid>
       </section>}
