@@ -39,12 +39,13 @@ header img {
 .nav-list {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 8px;
   padding: 0;
   margin: 0;
 }
 
-.nav-list a {
+.nav-list .nav-link {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 999px;
@@ -55,16 +56,16 @@ header img {
   transition: background-color 0.2s, color 0.2s;
 }
 
-.nav-list a:hover {
+.nav-list .nav-link:hover {
   background-color: var(--accent-bg);
   color: var(--accent);
 }
 
-#center {
+.center {
   padding: 32px 0 8px;
 }
 
-#center h1 {
+.center h1 {
   line-height: 1.25;
   padding-bottom: 0.15em;
   background: linear-gradient(135deg, var(--accent), #6366f1);
@@ -73,7 +74,7 @@ header img {
   color: transparent;
 }
 
-#center p {
+.center p {
   max-width: 520px;
   margin: 0 auto 24px;
   font-size: 18px;
@@ -167,6 +168,60 @@ header img {
 
 .todo-section {
   text-align: left;
+}
+
+.my-todos-hero {
+  padding: 48px 0 20px;
+}
+
+.my-todos-hero h1 {
+  padding: 1rem 0;
+  background: linear-gradient(135deg, var(--accent), #6366f1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.my-todos-hero > p:not(.counter) {
+  margin: 12px 0 20px;
+  font-size: 18px;
+}
+
+.my-todos-eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.empty-todos {
+  padding: 40px 24px;
+  border: 1px dashed var(--accent-border);
+  border-radius: 20px;
+  color: var(--text-h);
+  text-align: center;
+  background: var(--accent-bg);
+}
+
+.empty-todos h3 {
+  margin: 0 0 8px;
+}
+
+.empty-todos p {
+  margin: 0;
+}
+
+.my-todo-card {
+  height: 100%;
+  border-radius: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.my-todo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 
 .todo-done {

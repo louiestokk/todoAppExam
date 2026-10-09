@@ -1,6 +1,3 @@
-import React from 'react'
-import viteLogo from "../assets/vite.svg"
-import reactLogo from "../assets/react.svg"
 const Footer = () => {
   return (
     <footer>
