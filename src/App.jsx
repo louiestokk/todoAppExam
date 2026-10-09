@@ -26,6 +26,7 @@ function App() {
     setTodos([...todos, {id: Date.now(), task:text, done:false}])
     setDraft("")
   }
+
   // ES6 syntax arrow function
   const handleDone = (id) => {
     setTodos(todos.map((todo) => todo.id === id ? {...todo, done:!todo.done}: todo))
@@ -54,7 +55,7 @@ function App() {
    <section id="center">
           <h1>Todo App</h1>
           <p>Organize your day, stay focused, and never forget a to-do again.</p>
-          <Button type="button" styles="counter" handleClick={() => {}} text={`Todos for today ${todos.length}`} />
+          <p  className="counter">Todos for today {todos.length}</p>
       </section>
       <section className="add-section">
         <h2>
