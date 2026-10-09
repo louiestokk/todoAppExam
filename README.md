@@ -1,4 +1,6 @@
 # Project Todo App
+## Länk till muntlig redovisning
+https://funet-my.sharepoint.com/:v:/g/personal/3ggyhmu26_alsalo_folkuniversitetet_nu/IQClefiEb8_zS6xoybihUD6oAfurIdDTW0MMVqPL5hVp99w?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bmTgaU
 
 # Libraries / Packages
 1. Redux/Redux Toolkit for global state management
